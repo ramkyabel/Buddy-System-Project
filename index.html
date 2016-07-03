@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Buddy System - Operating Systems</title>
+  </head>
+	<body>
+		<div class="page-header">
+			<div class="container">
+				<h1>Buddy System</h1>
+			</div>
+		</div>
+
+		<div class="container">
+			
+			<div class="btn-group" data-toggle="buttons">
+			  <label class="btn btn-primary active btn-lg">
+			    <input type="radio" name="options" id="request" checked> Request
+			  </label>
+			  <label class="btn btn-primary btn-lg">
+			    <input type="radio" name="options" id="release"> Release
+			  </label>
+			 <div class="input-group input-group-lg">
+			    <input type="text" class="form-control" id="inputRequest" placeholder="Enter number." onkeydown="onKeyDown(event);">
+			 </div>
+
+			</div>
+		</div>
+	<br>
+	  
+	  <div class="container" id="memory_diagram" align="left">
+	    <table id="table_diagram" border="1" width="1400" height="75">
+	        <tr>
+	          <td class="size1024" bgcolor="#eff0f1">1024 B</td>
+	        </tr>
+	    </table>
+	  </div>
+	 <br>
+
+	  <div class="container" id="tree_diagram"></div>
+
+	  <div class="container" id="history">
+	  	<div class="userOperations"> 
+	  		<h2>Operation History:<br></h2>
+	  	</div>
+	  </div>
+
+	  <footer class="footer">
+	  	<div class="container">
+	 	 	<p class="text-muted">Developed by Ramky Abel Gracia Toro and Carlos Rivera Lopez. 
+	 	 	<br> Final Project COMP 4006 Prof. Cesar. Herrera
+	  		</p>	
+	  	</div>
+	  </footer>
+
+	<!-- load the d3.js library -->	
+	<script src="js/d3.v3.min.js"></script>
+	<script src="js/binary-tree.js"></script>
+	<script src="js/operations.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
