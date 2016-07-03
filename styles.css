@@ -1,0 +1,82 @@
+.node circle {
+  fill: #fff;
+  /*stroke: steelblue;*/
+  stroke-width: 3px;
+}
+
+.node text { font: 12px sans-serif; }
+
+.link {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+#memory_diagram {
+  /*float: left;*/
+  text-align: center;
+}
+
+svg {
+  position: absolute;
+  display: inline-block;
+}
+
+.user_input {
+  display: block;
+  float: left;
+}
+
+.size1024{
+  width: 100%;
+}
+.size512 {
+  width: 50%;
+}
+
+.size256 {
+  width: 25%;
+}
+
+.size128 {
+  width: 12.5%;
+}
+
+.size64 {
+  width:  6.25%;
+}
+
+.size32 {
+  width: 3.125%;
+}
+
+.size16 {
+  width: 1.5%;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: auto;
+  background-color: #f5f5f5;
+  /*opacity: 0.5;*/
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+input:active {
+}

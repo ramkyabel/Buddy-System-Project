@@ -1,0 +1,120 @@
+Cambios v.1.30
+-Polished code.
+-Whatever.
+Cambios v.1.25
+-Too lazy to write them down lol. But mainly
+some HTML maniputlation with jQuery, especially the
+user operations div.
+-Added operations history.
+-Also, added and modified some conditions in makeRequest.
+-Did some input validtation. 
+-Deleted changeType () function, no longer was needed.
+
+Cambios v.1.20
+**binary.tree.js
+*update (source),20
+-In nodeEnter.append ("circle"),46
+updated style ("fill",....) to receive inside color of node.
+-Updated conditional statement in nodeEnter.append("text"), 51
+so that each node has correct size in terms of B or K.
+*get_node_color (node), 70 now is get_node_stroke (node)
+-Updated conditional statements and now return different colors.
+*get_node_fill, 80
+-Returns correct filling for nodes.
+*bfs (node,serach_label,found), 147
+-Fucking piece of shit, motherfucker asshole dick. Can you even
+explain wtf line 170 is for??? 
+*remove_node is now remove_node_parent, 187
+-Better name for its use.
+*update_table_diagram,232
+-Added conditional statement in line 249, and updated line 253
+adding variable size as character, to include correct size annotation in node.
+
+**operations.js
+*makeRequest (), 7
+-In line 17, used isNan () similar use in if but in reverser order. Since
+isNan () returns false for empty string.
+*release (id), 66
+-Moved line 77 to correct position and some stupid code.
+
+------------------------------------------------------------------------------------------------------
+
+Cambios v.1.10
+
+**binary-tree.js
+  -Line 46, nodeEnter.append("circle"): circle radius was increased from 10 to 25 units.
+  -Line 53, nodeEnter.append("text"):  text position was changed to be nearly at the center of the circle (node).
+  -Line 53-56: nodeEnter.append("text").text : display value was changed to display label and value.
+
+  -Line 90: a new member was added to the data object: label which indicates the current label of the node.
+          : if a node doesn't have a label its default label is #, for search purposes.
+  -bottom_nodes array was removed from code.
+  -memory_blocks array was removed from code.
+  -variable "labels" was added to the code to count the labels.
+  Line 126:
+  -function int_to_ascii was added to convert the integer value of "labels" to a character.
+  Line 228: update_table_diagram():
+  -for-loop that created all the <td> html data was removed.
+*bfs(node, search_label, found), 136
+  -bfs(node, search_id,found) was changed to bfs(node, search_label, found).
+*remove_node (node), 184
+  -function remove_node(node, id) was changed to remove_node(node), a new statement was added.
+
+**operations.js
+  -bug caused when releasing the nodes was caused when the user entered a string as input (when expecting a number).
+*makeRequest (),7
+  -fixed by adding a condition testing whether if parseInt returns a NaN or not, namely isNaN(parseInt(...))
+  
+------------------------------------------------------------------------------------------------------
+
+Cambios: v.1.05
+
+
+**binary-tree.js
+*bfs(node, search_id, found), 136
+-Modifique el prototipo, añadiendo variable found.
+-Añadi lineas 150, 170 y Modifique el return en 154 de return 1 a return found;
+if (!(node.allocated))
+      return false;
+    found = true;
+    process_node = node;
+    return found;
+  -added a new condition to bfs to return false when a node not allocated was found, return value was changed from 1 to "found"
+-Ahora el bfs al encontrar un nodo que no este alojado o 
+y la linea 170 al encontrar un nodo que no en el arbol devolvera false.
+-Modifique 168, devuelve variable local found de cada recursion.
+found = bfs(queue[0], search_id, found) : queue = [root]; 
+
+*preorder (node), 173
+  -function preorder(node): was added a condition to gather the childless nodes in the binary tree.
+-Añadi linea   
+if (!("children" in node))
+    childless_nodes.push(node);
+-Para coger los nodos sin hijos, no se necesita ir por todos los nodos nuevamente en loop de update_table_diagram() linea 238, ya que en el preorder se esta haciendo.
+
+*update_table_diagram(), 229
+-Comente el loop en update_table_diagram() linea 238. Por la misma razon.
+-Comente power_2, no se esta usando.
+-Introduci variable color en linea 246 para añadirlo en el td el color correspondiente de la tabla. 
+if (childless_nodes [i].allocated)
+      var color = "bgcolor=red";
+    else
+      color = "bgcolor=white";
+-En linea 249, modifique la linea, añadiendo + " " + color ".
+table_content += "<td class=size" + String(childless_nodes[i].value) + " "+ color + ">" + String(childless_nodes[i].value) + " B </td>";
+
+
+**operations.js
+
+*release (id), 59
+-Añadi var found = false;, 62
+found = bfs(queue[0], id, found);
+
+  if (!(found))
+  {
+    alert ("Process not allocated or in memory.");
+    return;
+  }
+-Para saber si se encuentra en bfs el proceso.
+- process_node.allocated = false;, 74, 
+-Al remover nodo no se estaba poniendo el allocated devuelta a false.
