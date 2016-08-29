@@ -1,9 +1,7 @@
 Cambios v.1.30
--Polished code.
--Whatever.
+-Made code more readable.
 Cambios v.1.25
--Too lazy to write them down lol. But mainly
-some HTML maniputlation with jQuery, especially the
+-Mainly some HTML maniputlation with jQuery, especially the
 user operations div.
 -Added operations history.
 -Also, added and modified some conditions in makeRequest.
@@ -22,8 +20,6 @@ so that each node has correct size in terms of B or K.
 *get_node_fill, 80
 -Returns correct filling for nodes.
 *bfs (node,serach_label,found), 147
--Fucking piece of shit, motherfucker asshole dick. Can you even
-explain wtf line 170 is for??? 
 *remove_node is now remove_node_parent, 187
 -Better name for its use.
 *update_table_diagram,232
