@@ -1,5 +1,6 @@
 function onKeyDown (event)
 {
+  //Enter Keycode
   if (event.keyCode === 13)
     makeRequest();
 }
@@ -9,12 +10,15 @@ function makeRequest ()
   if (document.getElementById("request").checked)
   {
     var amount = parseInt (document.getElementById('inputRequest').value);
+
+    //Input validation. amount has to a number && 0 <= amount <= 1024.
     if (amount > 1024)
       alert ("Process is too big for memory.");
     else if (amount <= 0)
     {
       alert ("Process needs to be greater than 0.")
     }
+    //amount correct or invalid input.
     else 
     {
       if (isNaN(amount))
